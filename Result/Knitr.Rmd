@@ -1,0 +1,35 @@
+---
+title: "Knitr16Oct"
+output: html_document
+---
+
+# A title
+Make text bold **bold** or _italics_ or `code`
+
+* First thing to do
+* Second thing to do
+* Third thing to do 
+
+Some text that needs footnoting [^1].
+
+[^1]: And here is my footnote text
+
+1. list 1
+2. second
+3. last 
+
+[link to our notes](https://csiro-data-school.github.io/rmarkdown)
+
+!["caption"](../images/knitr.png){width=100px}
+
+
+
+
+
+
+## A subtitle
+
+## A second
+
+### Section header
+
