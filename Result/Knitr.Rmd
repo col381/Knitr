@@ -1,9 +1,47 @@
 ---
 title: "Knitr16Oct"
-output: html_document
+output: word_document
+
 ---
 
 # A title
+```{r}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, fig.width = 3)
+```
+
+
+
+
+
+
+
+```{r do_maths}
+3 + 4
+```
+```{r dataframe, echo=FALSE}
+library(tidyverse)
+gapminder <- read_csv("gapminder.csv")
+
+gapminder%>%
+  group_by(country)%>%
+  summarise()%>%
+  nrow()
+
+```
+Filler text There are  `r nrow(gapminder)` rows of data for us to work with,
+
+
+```{r filter}
+aust <- gapminder%>%
+  filter(country == "Australia")
+aust
+```
+
+
+```{r plot, echo=FALSE}
+ggplot(aust, aes(x = year, y = pop)) +
+geom_point()
+```
 Make text bold **bold** or _italics_ or `code`
 
 * First thing to do
@@ -13,6 +51,10 @@ Make text bold **bold** or _italics_ or `code`
 Some text that needs footnoting [^1].
 
 [^1]: And here is my footnote text
+```{r}
+ggplot(aust,aes(x = year, y = pop)) +
+geom_point()
+```
 
 1. list 1
 2. second
@@ -33,3 +75,4 @@ Some text that needs footnoting [^1].
 
 ### Section header
 
+This document was produced using R `r getRversion()` and the tidyverse`r packageVersion("tidyverse")`
